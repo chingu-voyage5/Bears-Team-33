@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Example extends Component {
+export default class QuestionComponent extends Component {
     componentDidMount(){
 
     }
@@ -10,18 +10,18 @@ export default class Example extends Component {
         return (
 
 
-            <div className="card" style={{'marginBottom': 0}}>
+            <div className="card" style={{'margin': 0}}>
 
                 <div className="card-body">
                     <div className="form-group">
 
 
-                        <input style={{'fontSize': '40px', 'marginBottom !important' : 0}} type="text" className="form-control" id="" name="" value={'Untitled Form'} />
+                        <input style={{'fontSize': '20px'}} type="text" className="form-control" id="" name="" value={'Untitled Question'} />
 
                     </div>
                     <div className="form-group">
 
-                        <label htmlFor="">Form description</label>
+
 
                         <input type="text" className="form-control" id="" name="" />
 

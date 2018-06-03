@@ -21,7 +21,7 @@
 
 <body class="index-page sidebar-collapse">
 @include('layouts/nav')
-<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="height: 20rem; background-image: url('./assets/img/bg2.jpg');">
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="height: 20rem;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">

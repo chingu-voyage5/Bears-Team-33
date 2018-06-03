@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SomeComponent from './SomeComponent'
+import QuestionComponent from './QuestionComponent'
 
 export default class Example extends Component {
     constructor(props){
@@ -15,14 +16,8 @@ export default class Example extends Component {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-header">Hello from React!</div>
-
-                            <div className="card-body">
-                                The currently logged in user is {this.props.currentUser.name ? this.props.currentUser.name :  ''}
-                                <SomeComponent user={this.props.currentUser ? this.props.currentUser :  ''}/>
-                            </div>
-                        </div>
+                        <SomeComponent user={this.props.currentUser ? this.props.currentUser :  ''}/>
+                        <QuestionComponent user={this.props.currentUser ? this.props.currentUser :  ''}/>
                     </div>
                 </div>
             </div>
