@@ -36354,15 +36354,20 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Example = function (_Component) {
     _inherits(Example, _Component);
 
-    function Example() {
+    function Example(props) {
         _classCallCheck(this, Example);
 
-        return _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).call(this, props));
+
+        console.log(_this.props);
+        return _this;
     }
 
     _createClass(Example, [{
         key: 'render',
         value: function render() {
+            console.log(this.props);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'container' },
@@ -36378,13 +36383,14 @@ var Example = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'card-header' },
-                                'Example Component'
+                                'Hello from React!'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'card-body' },
-                                'I\'m an example component!',
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__SomeComponent__["a" /* default */], { name: "Tony" })
+                                'The currently logged in user is ',
+                                this.props.currentUser.name ? this.props.currentUser.name : '',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__SomeComponent__["a" /* default */], { user: this.props.currentUser ? this.props.currentUser : '' })
                             )
                         )
                     )
@@ -36400,7 +36406,10 @@ var Example = function (_Component) {
 
 
 if (document.getElementById('example')) {
-    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Example, null), document.getElementById('example'));
+    var data = document.getElementById('example').getAttribute('data');
+    var currentUser = document.getElementById('example').getAttribute('currentUser');
+
+    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Example, { data: JSON.parse(data) ? JSON.parse(data) : '', currentUser: JSON.parse(currentUser) ? JSON.parse(currentUser) : '' }), document.getElementById('example'));
 }
 
 /***/ }),
@@ -55662,8 +55671,8 @@ var Example = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'card-body' },
-                'Hey ',
-                this.props.name
+                'I\'ve passed down the current user as prop:  ',
+                this.props.user.name ? this.props.user.name : ''
             );
         }
     }]);

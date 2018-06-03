@@ -11,7 +11,7 @@ export default class Example extends Component {
 
 
                             <div className="card-body">
-                                Hey {this.props.name}
+                                I've passed down the current user as prop:  {this.props.user.name ? this.props.user.name :  ''}
                             </div>
 
         );
