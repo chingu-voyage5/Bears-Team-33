@@ -25,6 +25,8 @@ export default class QuestionComponent extends Component {
 
                         <input type="text" className="form-control" id="" name="" />
 
+
+
                     </div>
 
                 </div>

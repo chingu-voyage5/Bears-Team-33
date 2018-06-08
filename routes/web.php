@@ -31,5 +31,8 @@ Route::post('/login', 'SessionsController@store');
 
 Route::get('/logout', 'SessionsController@destroy');
 
+Route::post('/saveForm', 'FormController@store');
+Route::get('/createForm', 'FormController@create');
+
 
 
