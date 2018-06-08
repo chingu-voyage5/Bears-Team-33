@@ -10,7 +10,7 @@ export default class Example extends Component {
         return (
 
 
-            <div className="card" style={{'marginBottom': 0}}>
+            <div className="card" style={{'marginBottom': 0, 'boxShadow' : `-12px 0 8px -4px rgba(218, 218, 218, 0.8)`}}>
 
                 <div className="card-body">
                     <div className="form-group">
