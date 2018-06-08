@@ -1,12 +1,38 @@
 @extends('layouts.master')
 
 @section('content')
-    <h2 class="card-title text-center">You should see your saved forms here or create a new one </h2>
-    <h5>https://www.dropbox.com/s/bssn44cu1rmfjtg/Screenshot%202018-06-03%2006.58.05.png?dl=0</h5>
+    <h2 class="card-title text-center">Home</h2>
 
-    <h>Forms</h>
+    <div class="container">
+        <a href="{{route('new', ['uniqueID' => $randomNum])}}"><div class="card" style="width: 18rem;">
+                <div class="card-body" style="    text-align: center;
+    color: #a47cc2;
+    font-size: 10rem;">
+                    <i class="fa fa-plus"></i>
+                    <h6 class="card-subtitle mb-2 text-muted">New Form</h6>
+                </div>
+            </div></a>
 
-    <div id="example" data='{{ $data }}' currentUser='{{auth()->user()}}'></div>
+    </div>
+
+
+    {{--<div class="container">--}}
+        {{--<div class="card" style="width: 18rem;">--}}
+            {{--<div class="card-body">--}}
+                {{--<h5 class="card-title"><i class="fas fa-plus"></i></h5>--}}
+
+                {{--<i class="fa fa-plus"></i>--}}
+                {{--<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>--}}
+                {{--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
+                {{--<a href="#" class="card-link">Card link</a>--}}
+                {{--<a href="#" class="card-link">Another link</a>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+    </div>
+
+
+
 
 @endsection
 

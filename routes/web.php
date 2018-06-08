@@ -15,11 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/home', function () {
+    header('Location: '. 'forms');
+})->name('home');
+
 Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
 
 
 Route::get('/forms', 'FormsController@index')->name('forms');
+Route::get('/forms/new/{id}', 'FormsController@create')->name('new');
 
 Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
